@@ -27,4 +27,11 @@ function loginFail(error) {
 
 export default function login(params) {
   const { query } = params
+  const headers = new Headers()
+  const config = {
+    method:'POST',
+    headers: {
+
+    }
+  }
 }
