@@ -5,8 +5,8 @@ let Login = (props) => {
   const { handleSubmit } = props
   return <form onSubmit={ handleSubmit }>
     <div className="group">
-      <label htmlFor="email">email:</label>
-      <Field type="email" name='email' component='input'/>
+      <label htmlFor="username">username:</label>
+      <Field type="text" name='username' component='input'/>
     </div>
     <div className="group">
       <label htmlFor="password">password:</label>

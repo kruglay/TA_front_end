@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import { connect } from 'redux'
+import { connect } from 'react-redux'
 import Login from '../components/Login'
 import login from '../actions/login'
 
 class LoginContainer extends Component {
   handleSubmit(values) {
-    login()
     console.log(values)
+    login({
+      ...values,
+      query: this.props.location.pathname
+    })
   }
   render() {
-    return <Login onSubmit={this.handleSubmit}/>
+    return <Login onSubmit={this.handleSubmit.bind(this)}/>
   }
 }
 
