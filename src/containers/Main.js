@@ -3,14 +3,10 @@ import { connect } from 'react-redux'
 import { getPosts } from 'actions/posts'
 import Main from 'components/Main'
 
-class MainContainer extends Component {
-  componentWillMount() {
-    this.props.getPosts()
-  }
-
+export default class MainContainer extends Component {
   render() {
     return <Main {...this.props}/>
   }
 }
 
-export default connect(null, { getPosts })(MainContainer)
+// export default connect(null, { getPosts })(MainContainer)

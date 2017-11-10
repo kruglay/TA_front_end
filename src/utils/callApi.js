@@ -1,3 +1,5 @@
+export const REDIRECT = 'REDIRECT_LOGIN'
+
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response
@@ -26,7 +28,7 @@ export default function callApi(url, config, request, success, fail) {
     fetch(url, config)
       .then(checkStatus)
       .then(parseJSON)
-      .then(json=>dispatch(success(json)))
+      .then(json=> dispatch(success(json)))
       .catch(error => {
         dispatch(fail(error))
       })

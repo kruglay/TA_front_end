@@ -30,11 +30,10 @@ function fail(error) {
 }
 
 export function getPosts(orders = [0]) {
-  let url = `${route}/posts`
-  let body = JSON.stringify({orders})
+  let query = JSON.stringify({orders})
+  let url = `${route}/posts?orders=${orders}`
   let config = {
-    method: 'POST',
-    body
+    method: 'GET'
   }
-  callApi(url, config, request, success, fail)
+  return callApi(url, config, request, success, fail)
 }
