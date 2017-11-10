@@ -35,10 +35,9 @@ export default function login(params) {
     password
   })
   const config = {
-    method:'POST',
-    headers,
+    method: 'POST',
     body,
   }
   const url = `${route}${query}`
-  callApi(url, config, request, success, fail)
+  return callApi(url, config, request, success, fail)
 }

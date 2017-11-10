@@ -29,13 +29,12 @@ function fail(error) {
   }
 }
 
-export function getPosts(order = 0) {
-  let url = `${routes}/posts`
+export function getPosts(orders = [0]) {
+  let url = `${route}/posts`
+  let body = JSON.stringify({orders})
   let config = {
     method: 'POST',
-    body: {
-      'order': '0'
-    }
+    body
   }
   callApi(url, config, request, success, fail)
 }

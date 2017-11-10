@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import Header from './components/Header'
-import Main from './components/Main'
+import Main from 'containers/Main'
 import Test from './components/Test'
 import Login from './containers/Login'
 

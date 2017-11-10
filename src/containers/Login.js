@@ -6,7 +6,7 @@ import login from '../actions/login'
 class LoginContainer extends Component {
   handleSubmit(values) {
     console.log(values)
-    login({
+    this.props.login({
       ...values,
       query: this.props.location.pathname
     })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getPosts } from '../actions/posts'
+import { getPosts } from 'actions/posts'
 import Main from 'components/Main'
 
 class MainContainer extends Component {
@@ -9,7 +9,7 @@ class MainContainer extends Component {
   }
 
   render() {
-    return <Main {this.props}/>
+    return <Main {...this.props}/>
   }
 }
 
