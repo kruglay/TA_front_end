@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Main = (props) => {
-  return <p className="App-intro">
-    To get started, edit <code>src/App.js</code> and save to reload.
-  </p>
+const Main = ({info}) => {
+  return  <div className="main">
+    {Object.keys(info).length > 0 && <span className={`${info.type}`}> {info.message} </span>}
+      <ul className="links">
+        <li></li>
+      </ul>
+    </div>
+
 }
 
 export default Main

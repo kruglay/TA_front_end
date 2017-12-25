@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
 import { getPosts } from "actions/posts"
-import Posts from 'components/Posts'
+import { Posts, CreatePost } from 'components/posts'
 
 class PostsContainer extends Component {
   componentWillMount() {
@@ -10,7 +11,12 @@ class PostsContainer extends Component {
   }
 
   render() {
-    return <Posts {...this.props}/>
+    const {match} = this.props
+    return  <div className="posts">
+
+      <Posts {...this.props}/>
+    </div>
+
   }
 }
 

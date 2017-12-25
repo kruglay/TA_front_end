@@ -37,6 +37,7 @@ export default function login(params) {
   const config = {
     method: 'POST',
     body,
+    credentials: 'include'
   }
   const url = `${route}${query}`
   return callApi(url, config, request, success, fail)
