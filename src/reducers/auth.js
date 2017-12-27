@@ -16,6 +16,7 @@ export default function auth(state = initState, action) {
     case LOGIN_SUCCESS:
       if(action.payload.token) {
         window.localStorage.setItem('token', action.payload.token)
+        window.localStorage.setItem('user', action.payload.user)
       }
       return {
         ...state,

@@ -17,9 +17,12 @@ function request() {
 }
 
 function success(payload) {
+  let user = window.localStorage.getItem('user')
+  let filtered = payload.filter(el=>el.user === user)
   return {
     type: POSTS_SUCCESS,
     isFetching: false,
+    filtered,
     payload
   }
 }

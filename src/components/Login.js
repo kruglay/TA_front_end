@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form'
 let Login = (props) => {
   const { handleSubmit, result, username } = props
   let comp
-  debugger
   if (result === 'success') {
     comp = <span>Welcome back {username}</span>
   } else {

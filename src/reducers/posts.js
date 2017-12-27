@@ -22,7 +22,8 @@ export default function posts(state = initState, action) {
       return {
         ...state,
         isFetching: action.isFetching,
-        posts: action.payload
+        posts: action.payload,
+        filtered: action.filtered
       }
     case POSTS_FAIL:
       return {
