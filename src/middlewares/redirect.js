@@ -1,4 +1,4 @@
-import { LOGIN_FAIL } from "../actions/login"
+import { LOGIN_FAIL } from "../actions/auth"
 
 export const REDIRECT = 'REDIRECT'
 

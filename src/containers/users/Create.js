@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import CreateUser from 'components/users/Create'
 import { connect } from 'react-redux'
-import { createUser } from 'actions/users'
-import { Redirect } from 'react-router-dom'
+import { createUser } from 'actions/auth'
 
 class CreateUserContainer extends Component {
   handleClick(value) {
@@ -12,13 +11,13 @@ class CreateUserContainer extends Component {
   }
 
   render() {
-    return (this.props.result === 'success' ? <Redirect to='/'/> : <CreateUser onSubmit={this.handleClick.bind(this)}/>)
+    return <CreateUser onSubmit={this.handleClick.bind(this)} {...this.props}/>
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    result: state.newUser.result
+    user: state.auth.user
   }
 }
 

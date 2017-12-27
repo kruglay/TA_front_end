@@ -10,7 +10,6 @@ import auth from '../reducers/auth'
 import posts from 'reducers/posts'
 import redirectMiddleware from 'middlewares/redirect'
 import redirect from 'reducers/redirect'
-import newUser from 'reducers/users'
 
 export const history = createHistory()
 const middleware = applyMiddleware(routerMiddleware(history), thunk, redirectMiddleware, logger)
@@ -20,7 +19,6 @@ const store = createStore(combineReducers({
   auth,
   posts,
   redirect,
-  newUser
 }), middleware)
 
 export default store

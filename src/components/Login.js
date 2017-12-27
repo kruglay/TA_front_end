@@ -1,13 +1,12 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Redirect } from 'react-router-dom'
 
 let Login = (props) => {
-  const { handleSubmit, result, username } = props
-  let comp
-  if (result === 'success') {
-    comp = <span>Welcome back {username}</span>
-  } else {
-    comp = <form onSubmit={ handleSubmit }>
+  const { handleSubmit, user } = props
+  return <div className="login">
+    {user && <Redirect to={'/'}/>}
+    <form onSubmit={ handleSubmit }>
       <div className="group">
         <label htmlFor="username">username:</label>
         <Field type="text" name='username' component='input'/>
@@ -18,9 +17,6 @@ let Login = (props) => {
       </div>
       <input type="submit" value='Log in'/>
     </form>
-  }
-  return <div className="login">
-      {comp}
     </div>
 }
 
