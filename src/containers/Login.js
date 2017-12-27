@@ -12,13 +12,13 @@ class LoginContainer extends Component {
     })
   }
   render() {
-    return <Login onSubmit={this.handleSubmit.bind(this)}/>
+    return <Login onSubmit={this.handleSubmit.bind(this)} {...this.props}/>
   }
 }
 
 const mapStateToProps =(state)=> {
   return {
-    isFetching: state.auth.isFetching
+    ...state.auth
   }
 }
 

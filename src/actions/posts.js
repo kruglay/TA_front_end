@@ -56,9 +56,8 @@ function failCreate(error) {
 }
 
 
-export function getPosts(orders = [0]) {
-  let query = JSON.stringify({orders})
-  let url = `${route}/posts?orders=${orders}`
+export function getPosts() {
+  let url = `${route}/posts`
   let config = {
     method: 'GET'
   }
@@ -66,7 +65,19 @@ export function getPosts(orders = [0]) {
 }
 
 export function createPost(post) {
-  let url = `${route}/posts/create`
+  let token = window.localStorage.getItem('token')
+  if (!token) {
+    successCreate({
+      result: 'fail',
+      info: {
+          type: 'info',
+          message: 'only authorized person can add post'
+      }
+    })
+  } else {
+    post.token = token
+  }
+  let url = `${route}/posts/new`
   let config = {
     method: 'POST',
     body: JSON.stringify(post)

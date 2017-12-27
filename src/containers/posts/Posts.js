@@ -21,10 +21,8 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const { posts } = state
   return {
-    posts: posts.posts,
-    isFetching: posts.isFetching
+    ...state.posts
   }
 }
 

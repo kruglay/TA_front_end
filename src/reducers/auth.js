@@ -14,10 +14,13 @@ export default function auth(state = initState, action) {
         isFetching: action.isFetching
       }
     case LOGIN_SUCCESS:
+      if(action.payload.token) {
+        window.localStorage.setItem('token', action.payload.token)
+      }
       return {
         ...state,
         isFetching: action.isFetching,
-        payload: action.payload
+        ...action.payload
       }
     case LOGIN_FAIL:
       return {

@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Posts = (props) => {
-  const {posts} = props
+  const {posts, result, info} = props
   if (!posts || !posts.length) { return null }
   return <div className="posts">
+
       <ul>
 
         {
@@ -17,7 +18,7 @@ const Posts = (props) => {
           )
         }
       </ul>
-    <Link to='/posts/new'>Add</Link>
+    {window.localStorage.getItem('token') && <Link to='/posts/new'>Add</Link>}
     </div>
 }
 

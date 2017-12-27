@@ -13,6 +13,9 @@ export default function newUser(state = initState, action) {
         isFetching: action.isFetching
       }
     case USER_CREATE_SUCCESS:
+      if(action.payload.token) {
+        window.localStorage.setItem('token', action.payload.token)
+      }
       return {
         ...state,
         isFetching: action.isFetching,
