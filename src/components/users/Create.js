@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Redirect } from 'react-router-dom'
+import { Button } from 'antd'
 
 const validate = value => {
   console.log('validate', value)
@@ -39,7 +40,8 @@ let CreateUser = ({handleSubmit, submitting, user}) => {
           }}
         />
       </div>
-      <button type="submit" disabled={submitting}>Register</button>
+      {/*<button type="submit" disabled={submitting}>Register</button>*/}
+      <Button type={'default'}>Register</Button>
     </form>
     </div>
 

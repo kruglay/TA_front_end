@@ -1,6 +1,6 @@
-import { injectBabelPlugin } from 'react-app-rewired'
+const { injectBabelPlugin } = require('react-app-rewired')
 
-export default function override(config, env) {
+module.exports = function override(config, env) {
   config = injectBabelPlugin(['import', { libraryName: 'antd', libraryDirectory: 'es', style: 'css' }], config);
   return config;
 };
