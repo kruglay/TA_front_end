@@ -4,12 +4,14 @@ import CreateUser from "containers/users/Create"
 import { Route, Switch } from 'react-router-dom'
 import Login from 'containers/Login'
 import { CreatePost, Posts } from "../containers/posts";
+import { Button } from 'antd'
 
 
 const Main = ({info, handleClick}) => {
   let user = window.localStorage.getItem('user')
   return  <div className="main">
     {Object.keys(info).length > 0 && <span className={`${info.type}`}> {info.message} </span>}
+      <Button type="primary">Button</Button>
       <ul className="links">
         {!user && <li>
           <Link to={'/login'}>Login</Link>
