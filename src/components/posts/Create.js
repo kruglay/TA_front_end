@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Field, reduxForm, reset } from 'redux-form'
 
 let CreatePost = (props) => {
