@@ -1,5 +1,3 @@
-import { LOGIN_FAIL } from "../actions/auth"
-
 export const REDIRECT = 'REDIRECT'
 
 const redirect = store => next => action => {

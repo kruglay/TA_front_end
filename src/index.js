@@ -25,7 +25,7 @@ const onEnter = (props) => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
+    <div className="container">
       <Header/>
       <ConnectedRouter history={history}>
         <Route path="/" render={props => onEnter(props)}/>

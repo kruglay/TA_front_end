@@ -11,7 +11,8 @@ export const
   USER_CREATE_REQUEST = 'USER_CREATE_REQUEST',
   USER_CREATE_SUCCESS = 'USER_CREATE_SUCCESS',
   USER_CREATE_FAIL = 'USER_CREATE_FAIL',
-  ADD_USER_DATA = 'ADD_USER_DATA'
+  ADD_USER_DATA = 'ADD_USER_DATA',
+  CLEAR_INFO='CLEAR_INFO'
 
 
 function request() {
@@ -25,7 +26,7 @@ function success(payload) {
   return {
     type: LOGIN_SUCCESS,
     isFetching: false,
-    payload: payload
+    payload: payload,
   }
 }
 
@@ -126,5 +127,12 @@ export function addUserData() {
   return {
     type: ADD_USER_DATA,
     user
+  }
+}
+
+export function clearInfo() {
+  return {
+    type: CLEAR_INFO,
+    info: null
   }
 }

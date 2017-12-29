@@ -1,3 +1,5 @@
+@import 'lib/skeleton.css';
+@import 'lib/normalize.css';
 @import '~antd/dist/antd.css';
 
 .App {
@@ -19,6 +21,31 @@
 .App-intro {
   font-size: large;
 }
+
+.group {
+  padding: 5px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.new-post {
+  margin-left: 5px;
+  width: 180px;
+}
+
+.own {
+  margin-right: 5px;
+  width: 180px;
+}
+
+.post-title, .post-text {
+  width: 50%;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -8,14 +8,14 @@ let Login = (props) => {
     {user && <Redirect to={'/'}/>}
     <form onSubmit={ handleSubmit }>
       <div className="group">
-        <label htmlFor="username">username:</label>
-        <Field type="text" name='username' component='input'/>
+        <Field type="text" name='username' component='input' placeholder="Username"/>
       </div>
       <div className="group">
-        <label htmlFor="password">password:</label>
-        <Field type="password" name='password' component='input'/>
+        <Field type="password" name='password' component='input' placeholder="Password"/>
       </div>
-      <input type="submit" value='Log in'/>
+      <div className="group">
+        <button className="button button-primary">Log in</button>
+      </div>
     </form>
     </div>
 }

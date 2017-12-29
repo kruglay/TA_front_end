@@ -8,14 +8,13 @@ import {
   USER_CREATE_REQUEST,
   USER_CREATE_SUCCESS,
   USER_CREATE_FAIL,
-  ADD_USER_DATA
+  ADD_USER_DATA,
+  CLEAR_INFO
 } from "../actions/auth"
 
 const initState = {
   isFetching: false,
-  info: {
-
-  }
+  info: null
 }
 
 export default function auth(state = initState, action) {
@@ -33,7 +32,12 @@ export default function auth(state = initState, action) {
       return {
         ...state,
         isFetching: action.isFetching,
-        ...action.payload
+        ...action.payload,
+        result: 'success',
+        info: {
+          type: 'info',
+          message: 'you logged in'
+        }
       }
     case LOGIN_FAIL:
       return {
@@ -103,6 +107,11 @@ export default function auth(state = initState, action) {
       return {
         ...state,
         user: action.user
+      }
+    case CLEAR_INFO:
+      return {
+        ...state,
+        info: action.info
       }
     default:
       return state

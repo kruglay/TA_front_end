@@ -5,18 +5,19 @@ import { Field, reduxForm, reset } from 'redux-form'
 let CreatePost = (props) => {
   const {handleSubmit, result, info} = props
   return <div className="createPost">
-    {result === 'fail' && <div className={info.type}>{info.message}</div>}
-    {result === 'success' && <div className={info.type}>{info.message}</div>}
+    {result && <div className={info.type}>{info.message}</div>}
     <form onSubmit={ handleSubmit }>
-      <div className="group">
-        <label htmlFor="title">title:</label>
-        <Field type="text" name='title' component='input' required/>
+      <div className="group" >
+        <Field type="text" name='title' component='input' placeholder="Title" className="post-text" required/>
       </div>
       <div className="group">
-        <label htmlFor="text">text:</label>
-        <Field name="text" component='textarea' required/>
+        <Field name="text" component='textarea' placeholder="Text" className="post-title" required/>
       </div>
-      <input type="submit" value='Add'/>
+      <div className="group">
+        <button className="button button-primary">
+          Add
+        </button>
+      </div>
     </form>
     </div>
 

@@ -17,31 +17,28 @@ let CreateUser = ({handleSubmit, submitting, user}) => {
     {user && <Redirect to={'/'}/>}
     <form onSubmit={handleSubmit}>
       <div className="group">
-        <label htmlFor="username">Login:</label>
-        <Field type='text' name='username' component='input' required></Field>
+        <Field type='text' name='username' component='input' placeholder="Login" required></Field>
       </div>
       <div className="group">
-        <label htmlFor="email">Email:</label>
-        <Field type='email' name='email' component='input' required></Field>
+        <Field type='email' name='email' component='input' placeholder="Email" required></Field>
       </div>
       <div className="group">
-        <label htmlFor="password">Password:</label>
-        <Field type='password' name='password' component='input' required></Field>
+        <Field type='password' name='password' component='input' placeholder="Password"  required></Field>
       </div>
       <div className="group">
-        <label htmlFor="confirmPassword" required>Confirm password:</label>
         <Field
           name='confirmPassword'
           component={confirmPassword => {
             return <div style={{display:'inline'}} className="confirmPassword">
-              <input type="password" {...confirmPassword.input}/>
-              {confirmPassword.meta.touched && confirmPassword.meta.error && <span>{confirmPassword.meta.error}</span>}
+              <input type="password" {...confirmPassword.input} placeholder="Confirm password" />
+              {confirmPassword.meta.touched && confirmPassword.meta.error && <span className="error">{confirmPassword.meta.error}</span>}
             </div>
           }}
         />
       </div>
-      {/*<button type="submit" disabled={submitting}>Register</button>*/}
-      <Button type={'default'}>Register</Button>
+      <div className="group">
+        <button className="button button-primary" disabled={submitting}>Register</button>
+      </div>
     </form>
     </div>
 

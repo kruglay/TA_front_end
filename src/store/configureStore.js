@@ -9,10 +9,11 @@ import testReducer from '../reducers/testReducer'
 import auth from '../reducers/auth'
 import posts from 'reducers/posts'
 import redirectMiddleware from 'middlewares/redirect'
+import clearInfoMiddleware from 'middlewares/clearInfoMiddleware'
 import redirect from 'reducers/redirect'
 
 export const history = createHistory()
-const middleware = applyMiddleware(routerMiddleware(history), thunk, redirectMiddleware, logger)
+const middleware = applyMiddleware(routerMiddleware(history), thunk, redirectMiddleware, clearInfoMiddleware, logger)
 const store = createStore(combineReducers({
   testReducer,
   form: formReducer,
